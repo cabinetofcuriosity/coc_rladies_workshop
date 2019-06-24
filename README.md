@@ -13,7 +13,7 @@ Depending on how you want to go through the tutorial, there are a few options. O
 
 1. **mybinder link (no installs)**: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cabinetofcuriosity/coc_lewis_clark_workshop/master?urlpath=rstudio) 
 2. View Only: [neotoma_tutorial_short](html/neotoma_tutorial_short.html)
-3. Download onto your local repo by cloning the [workshop Github repository](https://github.com/cabinetofcuriosity/coc_lewis_clark_workshop)
+3. Download onto your local repo by cloning the [workshop Github repository](https://github.com/cabinetofcuriosity/coc_rladies_workshop.git)
 
 ## Talk
 
