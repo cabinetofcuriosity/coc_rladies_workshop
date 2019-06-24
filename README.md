@@ -1,11 +1,11 @@
 <div style="text-align:center"><img src ="http://curiositydata.org/assets/img/cabinetIcon-01.png" width="25%" height="25%"/></div>
 
 # Unleashing the power of biodiversity data with data science
-Lewis & Clark College Workshop, April 17, 2019
+R-ladies Workshop
 
-Written By: Ciera Martinez and Sara Stoudt
+Written By: Ciera Martinez
 
-Workshop Website: [https://cabinetofcuriosity.github.io/coc_lewis_clark_workshop/](https://cabinetofcuriosity.github.io/coc_lewis_clark_workshop/)
+Workshop Website: [https://cabinetofcuriosity.github.io/coc_rladies_workshop/](https://cabinetofcuriosity.github.io/coc_rladies_workshop/)
 
 ## Tutorial
 
@@ -17,10 +17,7 @@ Depending on how you want to go through the tutorial, there are a few options. O
 
 ## Talk
 
-- Link to [PDF](pdf/2019_04_17_lewis_clark.pdf) of talk
-
-1. Unleashing the power of biodiversity data with data science - Ciera Martinez
-2. Why work in the Open - Sarah Stoudt
+- Link to [PDF](pdf/rladies_biodiviersity_talk.pdf) of talk
 
 ## References and Links
 
