@@ -179,6 +179,44 @@ ggplot() +
 
 *Alert*: We notice that the sampling is skewed towards North America for sure! Why is this the case? More often than not, it is because of *sampling bias*, a bias in which a sample is collected in such a way that some members of the intended population are less likely to be included than others. Sometimes the bias is because of the scope of the database, which is the case here. Neotoma is a US data aggregation database.  Other times, it can because of limitations in geographic area, actually there have been some studies showing sampling occurs closest to roads! Other times, it is taxonomic bias, or "taxonomic chauvinism", which is a bias in which organisms are sampled. It is very important to know your data as best you can before making any conclusions.
 
+## Mapping all the mammal on map (interactive)
+```{r}
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(leaflet, leaflet.extras)
+
+mdata <- mammals
+
+leaflet() %>%
+  setView(lng = -80, lat = 10, zoom= 2) %>%
+  addTiles('http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png',
+           attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>,
+               <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>
+               &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>') %>%
+  addScaleBar() %>%
+  addProviderTiles(providers$CartoDB.DarkMatter, group = "Black") %>%
+  addProviderTiles(providers$Esri.NatGeoWorldMap, group = "Standard") %>%
+  addLayersControl(baseGroups = c("Black", "Standard"), position = "topleft",
+                   options = layersControlOptions(collapsed = TRUE)) %>%
+  addMarkers(data = mdata, 
+             lat= ~lat, 
+             lng = ~long, 
+             layerId = ~taxon.name,
+             clusterOptions = markerClusterOptions(),
+             label = mdata$taxon.name,
+             popup=paste(
+               "<strong>ID: </strong>", mdata$X,
+               "<br><strong>Taxon Name: </strong>", mdata$taxon.name,
+               "<br><strong>Var units: </strong>", mdata$variable.units,
+               "<br><strong>Var element: </strong>", mdata$variable.element,
+               "<br><strong>Var context: </strong>", mdata$variable.context,
+               "<br><strong>Taxon group: </strong>", mdata$taxon.group,
+               "<br><strong>Site name: </strong>", mdata$site.name,
+               "<br><strong>Age older: </strong>", mdata$age.older,
+               "<br><strong>Age younger: </strong>", mdata$age.younger)
+  )
+
+```
+
 So let's zoom in on the United States since that is what Neotoma focuses on.
 
 ```{r}
